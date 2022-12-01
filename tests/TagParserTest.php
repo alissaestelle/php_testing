@@ -17,7 +17,7 @@ class TagParserTest extends TestCase {
     function testConvertTag()
     // testConvertTag(): converts a single string to an array
     {
-        // $result = $parser->convert(array ('Personal', 'Finance', 'Relationships'));
+        // Alternative: $result = $parser->convert(array ('Personal', 'Finance', 'Relationships'));
         $result = $this->parser->convert('Personal');
         $expectation = ['Personal'];
 
