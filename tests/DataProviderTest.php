@@ -8,17 +8,6 @@ class DataProviderTest extends TestCase {
 
     protected TagParser $parser;
 
-    /**
-     * @dataProvider tagProvider
-     */
-
-    function testConversion($input, $expected)
-    {
-        $parser = new TagParser;
-        $result = $parser->convert($input);
-        $this->assertSame($expected, $result);
-    }
-
     function tagProvider()
     {
         return 
@@ -29,6 +18,20 @@ class DataProviderTest extends TestCase {
             ['Personal | Finance | Relationships', ['Personal', 'Finance', 'Relationships']],
             ['Personal|Finance|Relationships', ['Personal', 'Finance', 'Relationships']]
         ];
+    }
+
+    /**
+     * @test
+     * @dataProvider tagProvider
+     */
+
+    function conversion($input, $expected)
+    {
+
+        $parser = new TagParser;
+        var_dump($input);
+        $result = $parser->convert($input);
+        $this->assertSame($expected, $result);
     }
 
 }

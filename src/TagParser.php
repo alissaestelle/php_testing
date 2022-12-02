@@ -41,7 +41,8 @@ class TagParser {
 
 
         // This solution accounts for all test conditions:
-        return preg_split('/ ?[,|] ?/', $tags);
+        // return preg_split('/ ?[,|!] ?/', $tags);
+        return preg_split('/[\s,|!]+/', $tags);
     }
 }
 
